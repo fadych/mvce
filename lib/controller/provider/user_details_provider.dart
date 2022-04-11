@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mvce/controller/device_utils/device_utils.dart';
 import 'package:mvce/controller/services/user_details_services.dart';
 import 'package:mvce/locator.dart';
+import 'package:mvce/model/single_user_model.dart';
 import 'package:mvce/model/user_details_model.dart';
 
 class UsersDetailsProvider extends ChangeNotifier {
@@ -45,6 +46,21 @@ class UsersDetailsProvider extends ChangeNotifier {
 
   decrement() {
     _counter--;
+    notifyListeners();
+  }
+
+  //
+  Singleusermodel _userDetailByid = Singleusermodel();
+  Singleusermodel get userDetailByid => _userDetailByid;
+  getSingleUserDetailFunction(String id) async {
+    _isLoading = true;
+    _userDetailByid = Singleusermodel();
+    await Future.delayed(Duration(seconds: 4), () {});
+    var result = await _usersDetailsService.getsingleuser(id);
+    if (result != null) {
+      _userDetailByid = result;
+    }
+    _isLoading = false;
     notifyListeners();
   }
 }
