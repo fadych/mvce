@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
-
-import '../device_utils/device_utils.dart';
+import 'package:mvce/controller/device_utils/device_utils.dart';
 
 class NavigationService {
   GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();

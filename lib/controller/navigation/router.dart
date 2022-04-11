@@ -1,12 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:mvce/constants/root_names.dart';
+import 'package:mvce/root_page.dart';
 import 'package:mvce/starting_screen.dart';
+import 'package:mvce/view/user_details_page.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
+    // case CStartingScreenRoute:
+    //   return _fadeRoute(settings.name, StartingScreen());
+    // case CRootPageRoute:
+    //   return _fadeRoute(settings.name, RootPage());
+    // case CUserDetailsPageRoute:
+    //   return _fadeRoute(settings.name, UsersDetailsPage());
     case CStartingScreenRoute:
-      return _fadeRoute(settings.name, StartingScreen());
-
+      return _fadeRoute(
+        settings.name,
+        StartingScreen(),
+      );
+    case CRootPageRoute:
+      return _fadeRoute(
+        settings.name,
+        RootPage(),
+      );
+    case CUserDetailsPageRoute:
+      return _fadeRoute(
+        settings.name,
+        UsersDetailsPage(),
+      );
     default:
       return _errorRoute();
   }

@@ -30,6 +30,10 @@ class _StartingScreenState extends State<StartingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Text("Loading ..."),
+      ),
+    );
   }
 }
